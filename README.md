@@ -1,6 +1,8 @@
 Trell
 =====
 
+Simple Ruby wrapper for <img src="https://d2k1ftgv7pobq7.cloudfront.net/images/bd87ee916375920ae72dffadbb10d412/logo-blue-lg.png" width="50">API. API documentation: https://trello.com/docs/api
+
 [![Gem Version](https://badge.fury.io/rb/trell.png)][gem]
 [![Build Status](https://secure.travis-ci.org/linyows/trell.png?branch=master)][travis]
 [![Dependency Status](https://gemnasium.com/linyows/trell.png?travis)][gemnasium]
@@ -12,8 +14,6 @@ Trell
 [gemnasium]: https://gemnasium.com/linyows/trell
 [codeclimate]: https://codeclimate.com/github/linyows/trell
 [coveralls]: https://coveralls.io/r/linyows/trell
-
-Simple Ruby wrapper for <img src="https://d2k1ftgv7pobq7.cloudfront.net/images/bd87ee916375920ae72dffadbb10d412/logo-blue-lg.png" width="70">API. API documentation: https://trello.com/docs/api
 
 Installation
 ------------
@@ -37,18 +37,21 @@ Reading public data
 
 ```ruby
 member = Trell.member 'foo'
-member.fullName
 => #<Sawyer::Resource:0x007f971230f538
+member.fullName
+=> "foo123456"
 ```
 
 Authentication
 --------------
 
-Generate a application key and application token
+Generate a application key and a application token
 
 ```ruby
-`open #{Trell.key_generator}` #=> get application key
-`open #{Trell.token_generator}` #=> get application token
+`open #{Trell.key_generator}`
+#=> get application key by browser
+`open #{Trell.token_generator}`
+#=> get application token by browser
 
 Trell.configure do |c|
   c.application_key = '429452e37b7eb23182ec12**********'
