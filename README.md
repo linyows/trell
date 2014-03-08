@@ -13,12 +13,7 @@ Trell
 [codeclimate]: https://codeclimate.com/github/linyows/trell
 [coveralls]: https://coveralls.io/r/linyows/trell
 
-Simple Ruby wrapper for the Trello API.
-https://trello.com/docs/api/
-
-<div align="center">
-<img src="https://d2k1ftgv7pobq7.cloudfront.net/images/bd87ee916375920ae72dffadbb10d412/logo-blue-lg.png" width="300">
-</div>
+Simple Ruby wrapper for <img src="https://d2k1ftgv7pobq7.cloudfront.net/images/bd87ee916375920ae72dffadbb10d412/logo-blue-lg.png" width="70">API. API documentation: https://trello.com/docs/api
 
 Installation
 ------------
@@ -27,12 +22,6 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'trell'
-```
-
-And then execute:
-
-```sh
-$ bundle
 ```
 
 Or install it yourself as:
