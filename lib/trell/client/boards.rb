@@ -1,13 +1,15 @@
 module Trell
   class Client
     module Boards
-      def all_boards(options = {})
-        get 'boards', options
-      end
-
-      def boards(username, options = {})
+      def member_boards(username, options = {})
         get "members/#{username}/boards", options
       end
+      alias_method :boards, :member_boards
+
+      def organization_boards(name, options = {})
+        get "organizations/#{name}/boards", options
+      end
+      alias_method :org_boards, :organization_boards
 
       def create_board(options = {})
         post 'boards', options
