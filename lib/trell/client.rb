@@ -2,6 +2,7 @@ require 'sawyer'
 require 'trell/configurable'
 require 'trell/authentication'
 require 'trell/client/members'
+require 'trell/client/organizations'
 require 'trell/client/boards'
 require 'trell/client/cards'
 require 'trell/client/lists'
@@ -13,6 +14,7 @@ module Trell
     include Trell::Authentication
     include Trell::Configurable
     include Trell::Client::Members
+    include Trell::Client::Organizations
     include Trell::Client::Boards
     include Trell::Client::Cards
     include Trell::Client::Lists
