@@ -28,6 +28,14 @@ module Trell
       yield self
     end
 
+    def api_endpoint
+      File.join(@api_endpoint, '')
+    end
+
+    def web_endpoint
+      File.join(@web_endpoint, '')
+    end
+
     def reset!
       @login              = ENV['TRELL_LOGIN']
       @password           = ENV['TRELL_PASSWORD']
