@@ -1,3 +1,5 @@
+require 'trell/response/raise_error'
+
 module Trell
   module Configurable
     OPTIONS_KEYS = %i(
