@@ -11,6 +11,8 @@ module Trell
       web_endpoint
       user_agent
       media_type
+      connection_options
+      proxy
       middleware
     )
 
@@ -35,6 +37,8 @@ module Trell
       @web_endpoint       = ENV['TRELL_WEB_ENDPOINT'] || 'https://trello.com/'
       @user_agent         = "Trell Ruby Gem #{Trell::VERSION}"
       @media_type         = 'application/json'
+      @connection_options = { headers: { accept: media_type, user_agent: user_agent } }
+      @proxy              = ENV['TRELL_PROXY']
       @middleware         = Faraday::RackBuilder.new { |builder|
           builder.use Trell::Response::RaiseError
           builder.adapter Faraday.default_adapter
