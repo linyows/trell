@@ -11,6 +11,7 @@ module Trell
       web_endpoint
       user_agent
       media_type
+      middleware
     )
 
     attr_accessor(*OPTIONS_KEYS)
@@ -34,6 +35,10 @@ module Trell
       @web_endpoint       = ENV['TRELL_WEB_ENDPOINT'] || 'https://trello.com/'
       @user_agent         = "Trell Ruby Gem #{Trell::VERSION}"
       @media_type         = 'application/json'
+      @middleware         = Faraday::RackBuilder.new { |builder|
+          builder.use Trell::Response::RaiseError
+          builder.adapter Faraday.default_adapter
+        }
       self
     end
     alias setup reset!
