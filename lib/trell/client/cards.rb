@@ -13,6 +13,10 @@ module Trell
         get "cards/#{id}", options
       end
 
+      def card_actions(id, options = {})
+        get "cards/#{id}/actions", options
+      end
+
       def update_card(id, options = {})
         put "cards/#{id}", options
       end
