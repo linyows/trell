@@ -36,6 +36,14 @@ module Trell
       File.join(@web_endpoint, '')
     end
 
+    def key_generator
+      'https://trello.com/1/appKey/generate'
+    end
+
+    def token_generator(key = nil, scope = %w(read write account), expiration = 'never')
+      "https://trello.com/1/authorize?response_type=token&key=#{@application_key = key if key}&return_url=https%3A%2F%2Ftrello.com&callback_method=postMessage&scope=#{scope.join(',')}&expiration=#{expiration}&name=Trell"
+    end
+
     def reset!
       @login              = ENV['TRELL_LOGIN']
       @password           = ENV['TRELL_PASSWORD']
