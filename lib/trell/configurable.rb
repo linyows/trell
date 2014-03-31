@@ -41,7 +41,7 @@ module Trell
     end
 
     def token_generator(key = nil, scope = %w(read write account), expiration = 'never')
-      "https://trello.com/1/authorize?response_type=token&key=#{@application_key = key if key}&return_url=https%3A%2F%2Ftrello.com&callback_method=postMessage&scope=#{scope.join(',')}&expiration=#{expiration}&name=Trell"
+      "https://trello.com/1/authorize?response_type=token&key=#{@application_key = key if key}&scope=#{scope.join(',')}&expiration=#{expiration}&name=Trell"
     end
 
     def reset!
